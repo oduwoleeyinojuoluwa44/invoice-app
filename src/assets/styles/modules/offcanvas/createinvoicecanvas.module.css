@@ -1,0 +1,32 @@
+.buttons {
+	display: flex;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%);
+	bottom: 0;
+	padding: 2.4rem 4.3rem;
+	box-shadow: 0px -45px 59px 0px rgba(0, 0, 0, 0.03);
+	width: 100%;
+	border-radius: 0rem 1.53846rem 1.53846rem 0rem;
+	display: flex;
+	justify-content: center;
+	gap: 0 0.65rem;
+	z-index: 150;
+	background-color: var(--offcanvas-bg);
+}
+
+.buttons button:nth-child(2) {
+	margin-left: auto;
+}
+
+@media screen and (max-width: 620px) {
+	.buttons {
+		border-radius: 0;
+		padding: 1.9rem;
+		position: fixed;
+	}
+
+	.buttons button span {
+		padding: 0 0.5rem;
+	}
+}

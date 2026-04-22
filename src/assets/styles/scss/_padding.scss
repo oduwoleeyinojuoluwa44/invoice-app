@@ -1,0 +1,121 @@
+@mixin padding($value) {
+	padding: #{$value}rem;
+}
+
+@mixin paddingX($value) {
+	padding: 0 #{$value}rem;
+}
+
+@mixin paddingY($value) {
+	padding: #{$value}rem 0;
+}
+
+@mixin paddingTop($value) {
+	padding-top: #{$value}rem;
+}
+@mixin paddingBottom($value) {
+	padding-bottom: #{$value}rem;
+}
+@mixin paddingLeft($value) {
+	padding-left: #{$value}rem;
+}
+@mixin paddingRight($value) {
+	padding-right: #{$value}rem;
+}
+
+@for $i from 1 through 10 {
+	.p-#{$i} {
+		@include padding($i);
+	}
+
+	.p-#{$i}-half {
+		@include padding(calc($i / 2));
+	}
+
+	.p-#{$i}-quarter {
+		@include padding(calc($i / 4));
+	}
+}
+
+@for $i from 1 through 10 {
+	.px-#{$i} {
+		@include paddingX($i);
+	}
+
+	.px-#{$i}-half {
+		@include paddingX(calc($i / 2));
+	}
+
+	.px-#{$i}-quarter {
+		@include paddingX(calc($i / 4));
+	}
+}
+
+@for $i from 1 through 10 {
+	.py-#{$i} {
+		@include paddingY($i);
+	}
+
+	.py-#{$i}-half {
+		@include paddingY(calc($i / 2));
+	}
+
+	.py-#{$i}-quarter {
+		@include paddingY(calc($i / 4));
+	}
+}
+
+@for $i from 1 through 10 {
+	.pt-#{$i} {
+		@include paddingTop($i);
+	}
+
+	.pt-#{$i}-half {
+		@include paddingTop(calc($i / 2));
+	}
+
+	.pt-#{$i}-quarter {
+		@include paddingTop(calc($i / 4));
+	}
+}
+
+@for $i from 1 through 10 {
+	.pb-#{$i} {
+		@include paddingBottom($i);
+	}
+
+	.pb-#{$i}-half {
+		@include paddingBottom(calc($i / 2));
+	}
+
+	.pb-#{$i}-quarter {
+		@include paddingBottom(calc($i / 4));
+	}
+}
+
+@for $i from 1 through 10 {
+	.pl-#{$i} {
+		@include paddingLeft($i);
+	}
+
+	.pl-#{$i}-half {
+		@include paddingLeft(calc($i / 2));
+	}
+
+	.pl-#{$i}-quarter {
+		@include paddingLeft(calc($i / 4));
+	}
+}
+@for $i from 1 through 10 {
+	.pr-#{$i} {
+		@include paddingRight($i);
+	}
+
+	.pr-#{$i}-half {
+		@include paddingRight(calc($i / 2));
+	}
+
+	.pr-#{$i}-quarter {
+		@include paddingRight(calc($i / 4));
+	}
+}

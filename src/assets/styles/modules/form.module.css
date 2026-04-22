@@ -1,0 +1,105 @@
+.formContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 0.7rem 0;
+}
+
+.formContainer.error > input {
+	border: 1px var(--09) solid;
+}
+
+.formContainer.error .labelGroup label {
+	color: var(--09);
+}
+
+.formContainer.error > input:focus {
+	border: 0;
+}
+
+.formContainer > input {
+	/* typography */
+	font-size: 1.15385rem;
+	font-weight: 700;
+
+	/* styles */
+	border-radius: 0.30769rem;
+	border: 1px solid var(--form-outline);
+	background: var(--white);
+	text-indent: 1.3rem;
+	padding: 1.3rem 0;
+	color: var(--form-text);
+	caret-color: var(--form-label);
+	background-color: var(--form-bg);
+	width: 100%;
+}
+
+.formContainer > input:focus {
+	outline: 1px solid var(--form-outline-focus);
+}
+
+.formContainer > input::placeholder {
+	color: var(--form-placeholder);
+}
+
+.formContainer > input[type='number']::-webkit-inner-spin-button,
+.formContainer > input[type='number']::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+.formContainer > input[type='number'] {
+	-moz-appearance: textfield;
+}
+
+.labelGroup {
+	display: flex;
+	justify-content: space-between;
+}
+
+.labelGroup > label {
+	color: var(--form-label);
+	font-family: League Spartan;
+	font-size: 1rem;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 1.15385rem; /* 115.385% */
+	letter-spacing: -0.00769rem;
+}
+
+.labelGroup > label.labelError {
+	color: var(--09);
+}
+.calendarContainer {
+	position: relative;
+	border-radius: 0.5rem;
+}
+
+.calendarContainer img {
+	position: absolute;
+	top: 50%;
+	right: 1.25rem;
+	transform: translateY(-50%);
+}
+.calendar {
+	width: 100%;
+	border: 0;
+	border-radius: 0.5rem;
+	outline: none;
+	font-size: 1.15385rem;
+	font-weight: 700;
+	padding: 1.15rem 0;
+	padding-left: 1.15rem;
+	background-color: var(--form-bg);
+	border: var(--form-outline) 1px solid;
+	color: var(--form-placeholder);
+}
+
+.calendar:hover {
+	border: var(--primary) 1px solid !important;
+	cursor: pointer;
+}
+
+.calendar:focus {
+	border: var(--primary) 1px solid !important;
+	cursor: pointer;
+}

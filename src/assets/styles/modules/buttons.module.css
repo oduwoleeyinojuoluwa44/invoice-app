@@ -1,0 +1,121 @@
+/* Default Button */
+
+.button {
+	height: 3.69231rem;
+	border-radius: 100px;
+	border: 0;
+	background-color: var(--primary);
+	font-size: 1.15385rem;
+	color: var(--white);
+	font-weight: 700;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: 150ms linear;
+	padding: 0.62rem;
+}
+
+.button:hover {
+	background-color: var(--primary-active);
+	transform: scale(1.01);
+}
+
+.button:active {
+	background-color: var(--primary);
+}
+
+.button > span {
+	padding: 0 1.2rem;
+	display: flex;
+}
+
+/* Add Button */
+
+.plusSvg {
+	padding: 0.85rem;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+	width: 2.46154rem;
+	height: 2.46154rem;
+}
+
+/* Delete Button */
+
+.button.deleteButton {
+	background-color: var(--error);
+}
+
+.button.deleteButton:hover {
+	background-color: var(--error-active);
+}
+
+.button.deleteButton:active {
+	background-color: var(--error);
+}
+
+/* Edit Light */
+
+.button.editButton {
+	background-color: var(--edit-btn-bg);
+	color: var(--edit-btn-text);
+}
+
+.button.editButton:hover {
+	background-color: var(--edit-btn-hover);
+}
+
+.button.editButton:active {
+	background-color: var(--edit-btn-bg);
+}
+
+.button.editButtonDark:active {
+	background-color: var(--secondary);
+}
+
+/* Save as Draft */
+.button.saveAsDraftButton {
+	background-color: var(--draft-btn-bg);
+	color: var(--draft-btn-text);
+}
+
+.button.saveAsDraftButton:hover {
+	background-color: var(--draft-btn-hover);
+}
+.button.saveAsDraftButton:active {
+	background-color: var(--draft-btn-bg);
+}
+
+/* Add New Item */
+.button.addNewItemButton {
+	background-color: hsl(228, 71%, 99%);
+	color: var(--text-light);
+	justify-content: center;
+}
+
+.button.addNewItemButton:hover {
+	background-color: hsl(231, 73%, 93%);
+}
+
+.button.addNewItemButton:active {
+	background-color: hsl(228, 71%, 99%);
+}
+
+/* go back */
+
+.goBack {
+	display: flex;
+	align-items: center;
+	gap: 0 1.82rem;
+	font-weight: 700;
+	color: var(--text);
+	margin-bottom: 2.4rem;
+	cursor: pointer;
+}
+
+.goBack:hover {
+	color: var(--text-hover);
+}

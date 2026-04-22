@@ -1,0 +1,120 @@
+.billFrom h4,
+.billTo h4 {
+	margin-top: 3.5rem;
+	margin-bottom: 1.85rem;
+	color: var(--primary);
+}
+
+.billFromfieldset,
+.billTofieldset {
+	margin-top: 1.9rem;
+	border: 0;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	width: 100%;
+	gap: 0 1.85rem;
+}
+
+.billFromfieldset > .billFromfieldsetInner {
+	grid-column: span 1;
+}
+
+.itemList h2 {
+	color: #777f98;
+	margin-top: 2.7rem;
+}
+
+.itemListFieldset {
+	display: flex;
+	flex-direction: column;
+}
+
+.itemListFieldset > .fieldsetHeader {
+	display: grid;
+	grid-template-columns: 1fr 0.33fr repeat(2, 0.5fr);
+	gap: 0 1.25rem;
+}
+
+.fieldsetHeader p {
+	color: var(--07);
+	margin: 1rem 0;
+}
+
+.itemListFieldset .itemsWrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 1.38rem 0;
+	padding-top: 1rem;
+}
+
+.itemsWrapper .item {
+	display: grid;
+	grid-template-columns: 1fr 0.33fr repeat(2, 0.5fr);
+	gap: 0 1.25rem;
+}
+
+.addNewItem {
+	width: 100%;
+	margin-top: 1.5rem;
+}
+
+.item > .deleteItem {
+	display: flex;
+	flex-direction: column;
+}
+
+.item > .deleteItem > div {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex: 1%;
+}
+
+.item > .deleteItem > label {
+	color: var(--form-label);
+}
+
+.item > .deleteItem p {
+	font-size: 1.15rem;
+	color: var(--text-2);
+	font-weight: 700;
+	letter-spacing: -0.01923rem;
+}
+
+.item > .deleteItem img {
+	cursor: pointer;
+}
+
+@media screen and (max-width: 620px) {
+	.billFrom h4,
+	.billTo h4 {
+		margin-top: 1.7rem;
+	}
+	.itemsWrapper .item {
+		grid-template-columns: 0.33fr repeat(2, 0.5fr);
+		grid-template-rows: repeat(2, 1fr);
+		gap: 1.9rem 1.25rem;
+	}
+
+	.item > div:nth-child(1) {
+		grid-column: span 3;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.billFromfieldset,
+	.billTofieldset {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		gap: 1.9rem;
+	}
+	.billFromfieldset > .billFromfieldsetInner:last-child,
+	.billTofieldset > .billTofieldsetInner:last-child {
+		grid-column: span 2;
+	}
+
+	.itemList h2 {
+		margin-top: 5rem;
+		margin-bottom: 0.7rem;
+	}
+}

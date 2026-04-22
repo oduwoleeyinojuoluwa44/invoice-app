@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;400;500;600;700;800;900&display=swap');
+
+:root {
+	--01: hsl(252, 94%, 67%);
+	--02: hsl(252, 100%, 73%);
+	--03: hsl(233, 31%, 17%);
+	--04: hsl(233, 30%, 21%);
+	--05: hsl(231, 73%, 93%);
+	--06: hsl(231, 20%, 61%);
+	--07: hsl(231, 37%, 63%);
+	--08: hsl(228, 29%, 7%);
+	--09: hsl(0, 80%, 63%);
+	--010: hsl(0, 100%, 80%);
+	--011: hsl(240, 27%, 98%);
+	--012: hsl(233, 30%, 11%);
+
+	--primary: var(--01);
+	--primary-active: var(--02);
+	--secondary: var(--03);
+	--secondary-active: var(--04);
+
+	/* neutral */
+	--white: hsl(0, 0%, 100%);
+	--grey: hsl(240, 27%, 98%);
+	--dark: hsl(233, 30%, 11%);
+	--text: var(--012);
+	--text-2: var(--06);
+	--text-3: var(--07);
+	--text-hover: var(--07);
+
+	/* feedback colors */
+	--error: var(--09);
+	--error-active: hsla(0, 80%, 63%, 0.8);
+
+	/* component colors */
+	--nav-bg: hsl(231, 20%, 27%);
+	--light-bg: var(--grey);
+	--body-bg: hsl(240, 27%, 98%);
+	--box-shadow: 0px 10px 20px 0px rgba(72, 84, 159, 0.25);
+	--checkbox-bg: var(--05);
+	--box-bg: var(--white);
+	--box-bg-2: hsl(228, 71%, 99%);
+	--box-bg-3: hsl(231, 20%, 27%);
+	--offcanvas-bg: var(--white);
+
+	/* button */
+	/* button text */
+	--edit-btn-text: var(--07);
+	--edit-btn-bg: hsl(228, 71%, 99%);
+	--edit-btn-hover: hsl(231, 73%, 93%);
+	--draft-btn-bg: hsl(231, 20%, 27%);
+	--draft-btn-text: var(--06);
+	--draft-btn-hover: var(--08);
+
+	/* form colors */
+	--form-outline: hsl(231, 73%, 93%);
+	--form-outline-focus: hsl(252, 100%, 73%);
+	--form-label: var(--05);
+	--form-bg: var(--white);
+	--form-placeholder: var(--dark);
+	--form-text: var(--08);
+
+	/* status */
+	--pending: hsl(34, 100%, 50%);
+	--paid: hsl(160, 67%, 52%);
+	--draft: hsl(231, 20%, 27%);
+	--pending-bg: hsla(34, 100%, 50%, 0.05);
+	--paid-bg: hsla(160, 67%, 52%, 0.05);
+	--draft-bg: hsla(231, 20%, 27%, 0.05);
+
+	/* DARK MODE */
+	--dark-mode-form-bg: hsl(233, 30%, 21%);
+	--dark-mode-form-outline: hsl(233, 31%, 17%);
+	--dark-mode-form-label: var(--05);
+
+	/* setting root typography */
+	font-size: 13px;
+	font-family: 'League Spartan', sans-serif;
+	font-weight: 500;
+	color: var(--text);
+	line-height: 1.38462rem;
+	letter-spacing: -0.00769rem;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	font-family: inherit;
+}
+
+body {
+	background-color: var(--body-bg);
+	color: var(--text);
+}
+
+a {
+	text-decoration: none;
+	color: initial;
+}
+
+a:focus {
+	border: 1px var(--primary) solid;
+	outline: none;
+	border-radius: 0.5rem;
+}
+
+fieldset {
+	border: 0;
+}
+
+button:focus {
+	border: 1px solid black;
+	outline: none;
+	border-radius: 100px;
+}
+
+main {
+	margin: 0;
+	position: relative;
+}
+
+::-webkit-scrollbar {
+	width: 0.61538rem;
+}
+
+::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--05);
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: var(--06);
+}
+
+@media screen and (max-width: 767px) {
+	main {
+		padding-top: 6rem;
+	}
+}
+
+@media print {
+	main {
+		margin: 0;
+	}
+}

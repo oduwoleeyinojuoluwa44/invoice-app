@@ -1,0 +1,108 @@
+.d-flex {
+	display: flex;
+}
+
+.flex-column {
+	flex-direction: column;
+}
+
+.justify-content-center {
+	justify-content: center;
+}
+
+.justify-content-end {
+	justify-content: flex-end;
+}
+
+.justify-content-between {
+	justify-content: space-between;
+}
+
+.align-items-center {
+	align-items: center;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.text--title {
+	font-size: 6.15385rem;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	letter-spacing: -0.19231rem;
+}
+
+.text--h1 {
+	font-size: 2.76923rem;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	letter-spacing: -0.08654rem;
+}
+
+.text--h2 {
+	font-size: 1.84615rem;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	letter-spacing: -0.05769rem;
+}
+
+.text--h3 {
+	font-size: 1.15385rem;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 1.84615rem;
+	letter-spacing: -0.01923rem;
+}
+
+.text--h4 {
+	font-family: League Spartan;
+	font-size: 1.15385rem;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 1.15385rem;
+	letter-spacing: -0.01923rem;
+}
+
+.default-body {
+	font-size: 1rem;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 1.38462rem;
+	letter-spacing: -0.00769rem;
+}
+
+.body-text {
+	color: var(--text);
+}
+
+.body-text-2 {
+	color: var(--text-2);
+}
+
+.body-text-3 {
+	color: var(--text-3);
+}
+
+.body-text-variant {
+	font-size: 1rem;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 1.15385rem;
+	letter-spacing: -0.00769rem;
+}
+
+.w-100 {
+	width: 100%;
+}
+
+.debug {
+	outline: 1px solid red;
+}
+
+.standout {
+	font-weight: 700;
+}

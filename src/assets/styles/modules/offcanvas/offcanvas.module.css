@@ -1,0 +1,56 @@
+.offcanvas {
+	position: fixed;
+	top: 50%;
+	left: 8rem;
+	transform: translateY(-50.1%);
+	height: 100vh;
+	width: 100vw;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+}
+
+.canvas {
+	background-color: var(--offcanvas-bg);
+	width: 47rem;
+	border-radius: 0rem 1.53846rem 1.53846rem 0rem;
+	height: 100vh;
+	padding: 4.5rem 4.3rem 0 4.3rem;
+	position: relative;
+	scrollbar-gutter: stable;
+}
+
+.canvas form {
+	height: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+	scrollbar-gutter: stable;
+	padding: 0 1rem;
+	padding-bottom: calc(8.5rem + 5rem);
+}
+
+@media screen and (max-width: 767px) {
+	.offcanvas {
+		left: 0;
+	}
+
+	.canvas {
+		margin-top: 6.3rem;
+		height: 90vh;
+	}
+}
+
+@media screen and (max-width: 620px) {
+	.canvas {
+		width: 100vw;
+		border-radius: 0;
+		padding: 4rem 2rem;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.canvas {
+		width: 100vw;
+		border-radius: 0;
+		padding: 3rem 0rem;
+	}
+}

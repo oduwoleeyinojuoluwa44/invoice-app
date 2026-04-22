@@ -1,0 +1,88 @@
+.dashboard {
+	min-height: 100vh;
+	margin-left: 8rem;
+}
+
+.dashboardNav {
+	display: flex;
+	width: clamp(50rem, 70%, 56.15385rem);
+	padding-top: 6rem;
+	margin: 0 auto;
+	align-items: center;
+	gap: 0 3rem;
+}
+
+.noInvoice {
+	min-height: 86vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.noInvoice > .imgContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 5rem;
+}
+
+.invoiceContainer {
+	width: 100%;
+}
+
+.invoiceWrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 1.2rem 0;
+	align-items: center;
+	justify-content: center;
+	padding: 5rem 0;
+}
+
+@media screen and (max-width: 860px) {
+	.invoiceWrapper a {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.dashboard {
+		margin: 0;
+	}
+	
+	.dashboardNav {
+		width: 92%;
+		padding-top: 2.77rem;
+		gap: 0 1.5rem;
+	}
+}
+@media screen and (max-width: 480px) {
+	.dashboardNav {
+		width: 92%;
+	}
+
+	.invoiceWrapper {
+		padding: 2.5rem 0;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	.dashboardNav {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		gap: 1rem 0;
+	}
+
+	.dashboardNav div:nth-child(2),
+	.dashboardNav div:nth-child(3) {
+		justify-self: flex-end;
+	}
+
+	.dashboardNav div:first-child {
+		grid-column: span 3;
+	}
+}

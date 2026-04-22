@@ -4,7 +4,6 @@ import styles from '../../../assets/styles/modules/dashboard/dashboard.module.cs
 // components
 import Button from '../../../components/button/Button';
 import Filter from './Filter';
-import Sort from './Sort';
 
 // libraries
 import { useMediaQuery } from 'react-responsive';
@@ -51,8 +50,6 @@ const DashboardNav = ({ length }: DashbordNavProps) => {
 			</div>
 
 			<Filter />
-
-			<Sort />
 
 			<Button
 				variant='addButton'

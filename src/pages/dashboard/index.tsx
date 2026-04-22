@@ -20,9 +20,6 @@ import { getInvoiceAsync } from '../../redux/invoice/invoiceSlice';
 // libraries
 import { useAutoAnimate } from '@formkit/auto-animate/react';
 
-// custom hooks
-import useSort from '../../hooks/useSort';
-
 // rrd
 import { useLocation } from 'react-router-dom';
 import useFilter from '../../hooks/useFilter';
@@ -36,7 +33,6 @@ const Dashboard = () => {
 
 	// states
 	const [data, setData] = useState<InvoiceType[]>([]);
-	const [sort, setSort] = useState<string[]>([]);
 	const [filter, setFilter] = useState<string[]>([]);
 	const [manipulatedData, setManipulatedData] = useState<InvoiceType[]>([]);
 
@@ -80,20 +76,16 @@ const Dashboard = () => {
 
 	// a logic to handle sorted items
 	useEffect(() => {
-		const sortedArray = useSort(data, sort);
-		const filteredData = useFilter(sortedArray, filter);
+		const filteredData = useFilter(data, filter);
 
 		setManipulatedData(filteredData);
-	}, [data, sort, filter]);
+	}, [data, filter]);
 
 	// sorting is handled using URL
 	useEffect(() => {
 		const searchParams = new URLSearchParams(location.search);
 
-		const newSort = searchParams.get('sort') || '';
 		const newFilter = searchParams.get('filter') || '';
-
-		setSort(newSort.split(','));
 
 		setFilter(newFilter.split(','));
 	}, [location]);
@@ -103,7 +95,7 @@ const Dashboard = () => {
 			<DashboardNav length={data.length ?? 0} />
 
 			<div className={styles.invoiceContainer}>
-				{data && data.length > 0 ? (
+				{manipulatedData && manipulatedData.length > 0 ? (
 					<div
 						className={styles.invoiceWrapper}
 						ref={animationParent}

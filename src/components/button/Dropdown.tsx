@@ -103,6 +103,7 @@ const Dropdown = forwardRef<DropdownRef, DropdownProps>((props, ref) => {
 			<div className={styles.dropdown}>
 				<button
 					type='button'
+					className={styles.dropdownTrigger}
 					aria-haspopup='menu'
 					aria-expanded={isOpen}
 					onClick={() => {
@@ -138,6 +139,7 @@ const Dropdown = forwardRef<DropdownRef, DropdownProps>((props, ref) => {
 								return (
 									<button
 										type='button'
+										className={styles.dropdownOption}
 										role='menuitemcheckbox'
 										aria-checked={checked}
 										onClick={() => {

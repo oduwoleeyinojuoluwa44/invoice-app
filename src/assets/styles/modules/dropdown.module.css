@@ -1,11 +1,20 @@
 /* dropdown */
 .dropdown {
 	/* outline: 1px red solid; */
-	cursor: pointer;
 	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.dropdownTrigger {
+	border: 0;
+	background: transparent;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
 }
 
 .dropdown p {
@@ -45,19 +54,26 @@
 	gap: 1rem 0;
 }
 
-.dropdown .dropdownDialog > div > div:hover .checkbox {
+.dropdown .dropdownDialog > div > .dropdownOption:hover .checkbox,
+.dropdown .dropdownDialog > div > .dropdownOption:focus-visible .checkbox {
 	outline: 1px var(--primary) solid;
 }
 
-.dropdown .dropdownDialog > div > div:hover span {
+.dropdown .dropdownDialog > div > .dropdownOption:hover span,
+.dropdown .dropdownDialog > div > .dropdownOption:focus-visible span {
 	color: var(--primary);
 }
 
-.dropdown .dropdownDialog > div > div {
+.dropdownOption {
 	cursor: pointer;
 	display: flex;
 	align-items: center;
 	gap: 0 1rem;
+	border: 0;
+	background: transparent;
+	color: var(--text);
+	padding: 0;
+	text-align: left;
 }
 
 .dropdown .dropdownDialog span {

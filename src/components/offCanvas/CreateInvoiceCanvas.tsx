@@ -22,7 +22,10 @@ const CreateInvoiceCanvas = () => {
 		<div
 			className={`${styles.canvas} animate animate--very-slow animate-ease-in-out slideToRight`}
 		>
-			<OffCanvasForm header='Create Form' close={handleClose}/>
+			<OffCanvasForm
+				header='New Invoice'
+				close={handleClose}
+			/>
 		</div>
 	);
 };

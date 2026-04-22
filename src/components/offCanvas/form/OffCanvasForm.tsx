@@ -27,6 +27,7 @@ interface OffCanvasFormProps {
 	close: () => void;
 	data?: FormDataType;
 	updateForm?: (data: FormDataType) => void;
+	hideActions?: boolean;
 }
 
 /**
@@ -41,6 +42,7 @@ const OffCanvasForm = ({
 	close,
 	data,
 	updateForm,
+	hideActions,
 }: OffCanvasFormProps) => {
 	// state
 	const [formData, setFormData] = useState<FormDataType>(defaultForm);
@@ -212,37 +214,39 @@ const OffCanvasForm = ({
 				formData={formData}
 			/>
 
-			<div className={thisCanvasStyles.buttons}>
-				<Button
-					variant='editButton'
-					onClick={() => {
-						submitModeRef.current = null;
-						close();
-					}}
-					type='button'
-				>
-					Discard
-				</Button>
-				<Button
-					variant='saveAsDraftButton'
-					onClick={() => {
-						submitModeRef.current = 'draft';
-					}}
-					type='submit'
-				>
-					Save as Draft
-				</Button>
-				<Button
-					type='submit'
-					onClick={() => {
-						submitModeRef.current = 'pending';
-						validateFormErrors();
-						inputRef.current?.scrollIntoView();
-					}}
-				>
-					Save & Send
-				</Button>
-			</div>
+			{!hideActions && (
+				<div className={thisCanvasStyles.buttons}>
+					<Button
+						variant='editButton'
+						onClick={() => {
+							submitModeRef.current = null;
+							close();
+						}}
+						type='button'
+					>
+						Discard
+					</Button>
+					<Button
+						variant='saveAsDraftButton'
+						onClick={() => {
+							submitModeRef.current = 'draft';
+						}}
+						type='submit'
+					>
+						Save as Draft
+					</Button>
+					<Button
+						type='submit'
+						onClick={() => {
+							submitModeRef.current = 'pending';
+							validateFormErrors();
+							inputRef.current?.scrollIntoView();
+						}}
+					>
+						Save & Send
+					</Button>
+				</div>
+			)}
 		</form>
 	);
 };

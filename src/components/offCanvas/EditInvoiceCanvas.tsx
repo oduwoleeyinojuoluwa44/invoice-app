@@ -40,9 +40,12 @@ const EditInvoiceCanvas = () => {
 		setEditedFormData(data);
 	};
 
-	const submitData = async () => {
+	const submitData = async (status?: 'draft' | 'pending') => {
 		if (editedFormData) {
-			const filteredData = Object.entries(editedFormData).filter(
+			const invoiceToSave = status
+				? { ...editedFormData, status }
+				: editedFormData;
+			const filteredData = Object.entries(invoiceToSave).filter(
 				([key, _]) => key !== 'id'
 			);
 
@@ -52,7 +55,7 @@ const EditInvoiceCanvas = () => {
 				Object.fromEntries(filteredData)
 			);
 
-			setData(editedFormData);
+			setData(invoiceToSave);
 			navigate(0);
 		}
 	};
@@ -63,8 +66,8 @@ const EditInvoiceCanvas = () => {
 		dispatch(onLoadCanvas(''));
 	};
 
-	const handleSave = () => {
-		submitData();
+	const handleSave = async (status?: 'draft' | 'pending') => {
+		await submitData(status);
 		handleClose();
 	};
 
@@ -88,10 +91,11 @@ const EditInvoiceCanvas = () => {
 			className={`${styles.canvas} animate animate--very-slow animate-ease-in-out slideToRight`}
 		>
 			<OffCanvasForm
-				header='Edit Form'
+				header={`Edit #${params.id}`}
 				close={handleClose}
 				data={data}
 				updateForm={updateForm}
+				hideActions
 			/>
 
 			<div className={thisCanvasStyles.buttons}>
@@ -104,16 +108,16 @@ const EditInvoiceCanvas = () => {
 				{data && data.status === 'draft' ? (
 					<Button
 						variant='saveAsDraftButton'
-						onClick={handleSave}
+						onClick={() => handleSave('draft')}
 					>
 						Save Draft
 					</Button>
 				) : (
-					<Button onClick={handleSave}>Save Changes</Button>
+					<Button onClick={() => handleSave()}>Save Changes</Button>
 				)}
 
 				{data && data.status === 'draft' && (
-					<Button onClick={handleClose}>Save and Send</Button>
+					<Button onClick={() => handleSave('pending')}>Save & Send</Button>
 				)}
 			</div>
 		</div>

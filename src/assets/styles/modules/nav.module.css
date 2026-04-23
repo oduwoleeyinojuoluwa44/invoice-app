@@ -74,10 +74,32 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	border: 0;
+	background: transparent;
+	padding: 0;
+	cursor: pointer;
 }
 
 .wrapper > .darkmodeToggle img {
-	cursor: pointer;
+	width: 1.53846rem;
+	height: 1.53846rem;
+	display: block;
+	transition: filter 0.2s ease;
+}
+
+.wrapper > .darkmodeToggle:hover img {
+	filter: brightness(0) invert(1);
+}
+
+.wrapper > .darkmodeToggle:focus {
+	border: 0;
+	outline: none;
+}
+
+.wrapper > .darkmodeToggle:focus-visible {
+	outline: 2px solid var(--02);
+	outline-offset: -0.61538rem;
+	border-radius: 0.92308rem;
 }
 
 @media screen and (max-width: 767px) {
@@ -102,6 +124,14 @@
 		margin-left: auto;
 		height: 100%;
 		width: 12.307rem;
+	}
+
+	.wrapper > .darkmodeToggle,
+	.wrapper > .imgContainer {
+		width: 6.15385rem;
+		height: 6.15385rem;
+		aspect-ratio: auto;
+		flex: 0 0 6.15385rem;
 	}
 
 	.wrapper > .imgContainer {

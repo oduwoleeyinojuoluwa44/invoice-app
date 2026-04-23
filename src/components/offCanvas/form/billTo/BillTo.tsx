@@ -51,17 +51,19 @@ const BillTo = ({
 
 	// functions
 	const handleSelectChange = (value: OptionType) => {
-		setSelectedValue(value)
-	}
+		setSelectedValue(value);
+	};
 
 	useEffect(() => {
 		if (formData) {
+			const paymentTerms = selectedValue.value;
 			const newData = {
 				createdAt: formatDate(formDate.toString()),
 				paymentDue: calculatePaymentDueDate(
 					formDate,
-					Number(formData.paymentTerms)
+					Number(paymentTerms)
 				),
+				paymentTerms,
 			};
 
 			update(newData);

@@ -31,14 +31,13 @@ export function validateData(key: string, data: string, target?: string) {
 				errorMsg: isEmail ? '' : 'invalid email',
 			};
 		case 'postcode':
-			const postcodeRegex = /^(0[289][0-9]{2})|([1-9][0-9]{3})$/i;
+			const postcodeRegex = /^[a-z0-9][a-z0-9\s-]{1,12}$/i;
 
 			const isPostCode = postcodeRegex.test(data);
 			return {
 				valid: isPostCode,
 				errorMsg: isPostCode ? '' : 'invalid',
 			};
-		case 'price':
 		case 'quantity':
 		case 'number':
 			const numberRegex = /^\d+$/;
@@ -61,6 +60,14 @@ export function validateData(key: string, data: string, target?: string) {
 			return {
 				valid: false,
 				errorMsg: 'Invalid number',
+			};
+		case 'price':
+			const priceValue = Number(data);
+			const isPrice = data.trim() !== '' && Number.isFinite(priceValue);
+
+			return {
+				valid: isPrice && priceValue > 0,
+				errorMsg: isPrice ? 'invalid' : 'Invalid number',
 			};
 
 		default:
